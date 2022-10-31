@@ -9,11 +9,13 @@ import {
 } from "react-native";
 
 
-export default function DetailedBook({ route }) {
-	// const { allBooks } = AppState;
+export default function DetailedBook({ route, AppState }) {
+	const { bookDetails } = AppState;
+	// const { bookDetails } = route;
     // const selectedBookData = route.params.selectedBook;
 
     console.log(route);
+	// console.log(bookDetails);
 	
 
 	return (
@@ -32,8 +34,8 @@ export default function DetailedBook({ route }) {
 			<View>
 				<View>
 					{/* <Text>{selectedBookData.title}</Text>
-					<Text>{selectedBookData.author}</Text>
-					<Image source={{ uri: allBooks.imgUrl }} style={styles.bookImage} />
+					<Text>{selectedBookData.author}</Text> */}
+					{/* <Image source={{ uri: allBooks.imgUrl }} style={styles.bookImage} />
 					<Text>{allBooks.title}</Text>
 					<Text>{allBooks.author}</Text> */}
 				</View>

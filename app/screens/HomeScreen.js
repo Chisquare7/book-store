@@ -17,11 +17,13 @@ import GlobalHeader from "../Headers/GlobalHeader";
 
 export default function HomeScreen({ navigation, AppState }) {
 	const { allBooks, setAllBooks } = AppState;
+	const {bookDetails, setBookDetails} = AppState;
 
 	const handlePress = (element) => {
-		setAllBooks(element);
+		// setAllBooks(element);
+		setBookDetails(element);
 
-		navigation.navigate("DetailedBook", { selectedBook: allBooks, });
+		navigation.navigate("DetailedBook", { selectedBook: bookDetails, });
 	};
 	// const [fontsLoaded] = useFonts({
 	// 	Inter_900Black,
