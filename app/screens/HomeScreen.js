@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import { useFonts } from "expo-font";
-// import { Inter_900Black } from "@expo-google-fonts/inter";
-// import * as SplashScreen from "expo-splash-screen";
 import {
 	StyleSheet,
 	View,
@@ -16,37 +13,16 @@ import GlobalFooter from "../Footers/GlobalFooter";
 import GlobalHeader from "../Headers/GlobalHeader";
 
 export default function HomeScreen({ navigation, AppState }) {
-	const { allBooks, setAllBooks } = AppState;
-	const {bookDetails, setBookDetails} = AppState;
+	const { allBooks, setAllBooks, bookDetails, setBookDetails } = AppState;
 
 	const handlePress = (element) => {
 		// setAllBooks(element);
-		setBookDetails(element);
+		const singleBook = allBooks.find(e => e.id === element);
+		console.log(singleBook);
+		setBookDetails(singleBook);
 
-		navigation.navigate("DetailedBook", { selectedBook: bookDetails, });
+		navigation.navigate("DetailedBook", { selectedBook: allBooks });
 	};
-	// const [fontsLoaded] = useFonts({
-	// 	Inter_900Black,
-	// 	InterSemiBoldItalic:
-	// 		"https://rsms.me/inter/font-files/Inter-SemiBoldItalic.otf?v=3.12",
-	// 	MontserratBold: require("../app/assets/font/Montserrat-Bold.ttf"),
-	// 	MontserratRegular: require("../app/assets/font/Montserrat-Regular.ttf"),
-	// });
-
-	// useEffect(() => {
-	// 	async function prepare() {
-	// 		await SplashScreen.preventAutoHideAsync();
-	// 	}
-	// 	prepare();
-	// }, []);
-
-	// const onLayout = useCallback(async () => {
-	// 	if (fontsLoaded) {
-	// 		await SplashScreen.hideAsync();
-	// 	}
-	// }, [fontsLoaded]);
-
-	// if (!fontsLoaded) return null;
 
 	return (
 		<ScrollView>

@@ -9,7 +9,7 @@ import AppNavigation from '../AppNavigation/AppNavigation';
 export default function AppState() {
     const [allBooks, setAllBooks] = useState(bookData);
     // const [bookDetails, setBookDetails] = useState({});
-    const [bookDetails, setBookDetails] = useState(bookData.id);
+    const [bookDetails, setBookDetails] = useState({});
 
     const AppState = {
         allBooks, setAllBooks,
